@@ -1,0 +1,49 @@
+.navbar {
+    padding: 20px 0;
+    background-color: white;
+}
+
+.navbar--sticky {
+    position: sticky;
+    top: 0;
+}
+
+.navbar__logo {
+    margin-bottom: 30px;
+
+    @media ($fromLarge) {
+        margin-bottom: 0;
+    }
+}
+
+.navbar__menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%;
+
+    @media ($fromLarge) {
+        flex: 0 0 auto;
+    }
+
+}
+
+.navbar__item {
+    margin: 0 10px;
+}
+
+.navbar--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media ($fromLarge) {
+        justify-content: space-between;
+    }
+}

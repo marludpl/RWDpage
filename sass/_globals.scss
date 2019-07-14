@@ -1,0 +1,15 @@
+.fw-img--mb {
+    margin-bottom: 30px;
+
+    @media ($fromLarge) {
+        margin-bottom: 0;
+    }
+}
+
+.img-lg-stretch-cover {
+    @media ($fromLarge) {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

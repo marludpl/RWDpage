@@ -1,0 +1,84 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    @media ($fromSmall) {
+        max-width: 800px;
+    }
+
+    @media ($fromLarge) {
+        max-width: 1200px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutterWidth;
+    margin-right: -$gutterWidth;
+}
+
+.row--center {
+    justify-content: center;
+}
+
+.row-md--space-between {
+    @media ($fromSmall) {
+        justify-content: space-between;
+    }
+}
+
+.container--center {
+    justify-content: center;
+}
+
+.container--align-center {
+    align-items: center;
+}
+
+.container--space-between {
+    justify-content: space-between;
+}
+
+$grid-columns: 12;
+$order: 12;
+
+
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        margin: 0 $gutterWidth;
+        width: percentage($i / $grid-columns) - ($gutterWidth * 2);
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+        @media ($fromSmall) {
+            margin: 0 $gutterWidth;
+            // width: percentage($i / $grid-columns) ;
+            width: percentage($i / $grid-columns) - ($gutterWidth * 2);
+
+        }
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+        @media ($fromLarge) {
+            margin: 0 $gutterWidth;
+            width: percentage($i / $grid-columns) - ($gutterWidth * 2);
+
+            // width: percentage($i / $grid-columns);
+        }
+    }
+}
+
+@for $i from 1 through $order {
+    .order-lg-#{$i} {
+        @media ($fromLarge) {
+            order: $i;
+        }
+    }
+}
